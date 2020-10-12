@@ -25,10 +25,10 @@ async def on_message(message):
     else:
         print('BOT command')
         user = message.author
+        command = msg.split(' ')
         if msg == '?notes help':
             response = '**Notes Bot**\n> *here are list of things i can understand*\n> `?notes personal <note> ` =>  Adds note to your personal list\n> `?notes personal list` =>  Shows your personal list\n> `?notes <note> ` =>  Adds note to server\'s list\n> `?notes list` =>  Shows server\'s list\n'
-        command = msg.split(' ')
-        if command[1] == 'personal':
+        elif command[1] == 'personal':
             if command[2] == 'list':
                 response = getList(author=user)
             else:
